@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiment 5 : Countdown timer</title>
+<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<div class="question">
+To create a downdown timer
+</div>
+
+<div class="manual">
+<div class="date">
+Enter your own date
+</div>
+<div class="enter_data">
+    <label class="input_data"> Enter the date </label>
+    <input type="number" class="input_data" id="date">
+    
+    <label class="input_data"> Enter the month </label>
+    <input type="text" class="input_data" id="month">
+    
+    <label class="input_data"> Enter the year </label>
+    <input type="number" class="input_data" id="year">
+    </div>
+    <div class="enter_data">
+    <label class="input_data"> Enter the Hour </label>
+    <input type="number" class="input_data" id="hour">
+    
+    <label class="input_data"> Enter the minute </label>
+    <input type="text" class="input_data" id="minute">
+    
+    <label class="input_data"> Enter the second </label>
+    <input type="number" class="input_data" id="second">
+    </div>
+    
+    <div class="start_button" onclick="startTimer()">
+        Start Timer
+</div>
+
+<div class="timer_value">
+Timer Value : <h2 id="timer_value"></h2>
+</div>
+</div>
+
+<script src="countdown.js"></script>
+</body>
+</html>

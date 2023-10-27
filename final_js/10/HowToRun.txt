@@ -1,0 +1,4 @@
+For run:
+command in terminal by cd into that directory,
+
+node Exp_10.js 5 

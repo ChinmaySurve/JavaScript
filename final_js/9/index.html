@@ -1,0 +1,227 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Information Form</title>
+    <style type="text/css">
+      body {
+        font-family: Calibri;
+      }
+      input[type="text"] {
+        width: 250px;
+      }
+      input[type="submit"],
+      input[type="reset"] {
+        width: 77px;
+        height: 27px;
+        position: relative;
+        left: 180px;
+      }
+      form {
+        text-align: center;
+        font-family: Calibri;
+        font-size: 20px;
+        border: 3px solid black;
+        width: 600px;
+        margin: 20px auto;
+      }
+      td {
+        padding: 10px;
+      }
+      td:first-child {
+        text-align: right;
+        font-weight: bold;
+      }
+      td:last-child {
+        text-align: left;
+      }
+      .error {
+        color: red;
+      } 
+    </style>
+  </head>
+  <body style="background-color: rgb(254, 255, 255)">
+    <center><h1>Student Information Form</h1></center>
+    <hr />
+    <form id="studentForm" onsubmit="return validateForm()">
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" id="name" name="name" /></td>
+          <td class="error" id="nameError"></td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td><input type="text" id="address" name="address" /></td>
+          <td class="error" id="addressError"></td>
+        </tr>
+        <tr>
+          <td>City:</td>
+          <td><input type="text" id="city" name="city" /></td>
+          <td class="error" id="cityError"></td>
+        </tr>
+        <tr>
+          <td>State:</td>
+          <td><input type="text" id="state" name="state" /></td>
+          <td class="error" id="stateError"></td>
+        </tr>
+        <tr>
+          <td>Gender:</td>
+          <td>
+            <select id="gender" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Mobile Number:</td>
+          <td><input type="text" id="mobile" name="mobile" /></td>
+          <td class="error" id="mobileError"></td>
+        </tr>
+        <tr>
+          <td>Email ID:</td>
+          <td><input type="text" id="email" name="email" /></td>
+          <td class="error" id="emailError"></td>
+        </tr>
+        <tr>
+          <td>Course:</td>
+          <td>
+            <select name="course">
+              <option value="HTML">HTML</option>
+              <option value="CSS">CSS</option>
+              <option value="JavaScript">JAVASCRIPT</option>
+              <option value="Java">JAVA</option></select
+            ><br />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="Submit" />
+            <input type="reset" value="Reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <div id="welcomeMessage" style="display: none;">
+        <h2>Congratulations!</h2>
+        <p>Welcome, <span id="welcomeName"></span>! Your information has been successfully submitted.</p>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <script type="text/javascript">
+        function validateForm() {
+            // Validation code (same as previous)
+
+            // If all validations pass, display welcome message
+            document.getElementById("welcomeName").textContent = name;
+            document.getElementById("studentForm").style.display = "none";
+            document.getElementById("welcomeMessage").style.display = "block";
+            
+            return false; // Prevent form submission
+        }
+
+        function goBack() {
+            // Hide the welcome message and show the form
+            document.getElementById("studentForm").style.display = "block";
+            document.getElementById("welcomeMessage").style.display = "none";
+            
+            // Reset the form values
+            document.getElementById("studentForm").reset();
+            
+            // Clear any error messages
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("addressError").innerHTML = "";
+            document.getElementById("mobileError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+        }
+      function validateForm() {
+        var name = document.getElementById("name").value;
+        var mobile = document.getElementById("mobile").value;
+        var email = document.getElementById("email").value;
+        var address = document.getElementById("address").value;
+        var city = document.getElementById("city").value;
+        var state = document.getElementById("state").value;
+
+        // Validation for name (only alphabets and spaces allowed)
+        var namePattern = /^[A-Za-z\s]+$/;
+        if (!name.match(namePattern)) {
+          document.getElementById("nameError").innerHTML = "Invalid name";
+          return false;
+        }
+        else{
+          document.getElementById("nameError").innerHTML = "";
+        }
+
+        // Validation for mobile number (10 digits required)
+        var mobilePattern = /^\d{10}$/;
+        if (!mobile.match(mobilePattern)) {
+          document.getElementById("mobileError").innerHTML =
+            "Invalid mobile number";
+          return false;
+        }
+        else{
+          document.getElementById("mobileError").innerHTML = "";
+        }
+
+        // Validation for email
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!email.match(emailPattern)) {
+          document.getElementById("emailError").innerHTML =
+            "Invalid email address";
+          return false;
+        }
+        else{
+          document.getElementById("emailError").innerHTML = "";
+        }
+
+        var addressPattern = /^[a-zA-Z0-9\s,'-]*$/;
+        if (address.trim() === "") {
+          document.getElementById("addressError").innerHTML = "Address is required";
+          return false;
+        }
+        else if(!address.match(addressPattern)){
+          document.getElementById("addressError").innerHTML = "Invalid Address";
+          return false;
+        } 
+        else {
+          document.getElementById("addressError").innerHTML = "";
+        }
+
+        if (city.trim() === "") {
+          document.getElementById("cityError").innerHTML = "City is required";
+          return false;
+        } 
+        else if(!city.match(namePattern)){
+          document.getElementById("cityError").innerHTML = "Invalid City name";
+          return false;
+        }
+        else {
+          document.getElementById("cityError").innerHTML = "";
+        }
+
+        if (state.trim() === "") {
+          document.getElementById("stateError").innerHTML = "State is required";
+          return false;
+        } 
+        else if(!state.match(namePattern)){
+          document.getElementById("stateError").innerHTML = "Invalid State name";
+          return false;
+        }
+        else {
+          document.getElementById("stateError").innerHTML = "";
+        }
+
+        // If all validations pass, display welcome message
+        document.getElementById("welcomeName").textContent = name;
+        document.getElementById("studentForm").style.display = "none";
+        document.getElementById("welcomeMessage").style.display = "block";
+
+        return false; // Prevent form submission
+      }
+    </script>
+  </body>
+</html>

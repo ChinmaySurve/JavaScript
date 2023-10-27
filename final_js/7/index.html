@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center; background-color: white;">
+
+    <hr>
+    <h1>Append Objects, Print Array, and Check Element at Index</h1>
+    Enter array size: <input id="arraySize" name="arraySize">
+    <p><button onclick="initializeArray()">Initialize Array</button></p>
+    Enter object: <input id="obj" name="obj">
+    <p><button onclick="appendObject()">Append object</button></p>
+    <p><button onclick="printArray()">Print Array</button></p>
+    Enter index to check: <input id="indexToCheck" name="indexToCheck">
+    <p><button onclick="checkElementAtIndex()">Check Element at Index</button></p>
+    <p id="ans"></p>
+
+    <script>
+        var objectsArray = [];
+        var arraySize = 0;
+
+        function initializeArray() {
+            arraySize = parseInt(document.getElementById("arraySize").value);
+            objectsArray = []; // Initialize as an empty array
+            document.getElementById("ans").innerHTML = "Array initialized with size: " + arraySize;
+        }
+
+        function appendObject() {
+            var target = document.getElementById("obj").value;
+            if (arraySize === 0) {
+                document.getElementById("ans").innerHTML = "Initialize the array size first.";
+                return;
+            }
+            if (objectsArray.length >= arraySize) {
+                document.getElementById("ans").innerHTML = "Array is full. Cannot add more elements.";
+                return;
+            }
+            if (target.startsWith("[") && target.endsWith("]")) {
+                target = JSON.parse(target);
+            }
+            objectsArray.push(target);
+            document.getElementById("ans").innerHTML = "Object appended: " + target;
+        }
+
+        function printArray() {
+            document.getElementById("ans").innerHTML = "Array: " + JSON.stringify(objectsArray);
+        }
+
+        function checkElementAtIndex() {
+            var index = parseInt(document.getElementById("indexToCheck").value);
+            if (index >= 0 && index < objectsArray.length) {
+                var element = objectsArray[index];
+                var isObjectAnArray = Array.isArray(element);
+                document.getElementById("ans").innerHTML = "Element at index " + index + ": " + JSON.stringify(element) + "<br>Is it an Array? " + isObjectAnArray;
+            } else {
+                document.getElementById("ans").innerHTML = "Invalid index. Please enter a valid index within the array's bounds.";
+            }
+        }
+    </script>
+</body>
+
+</html>

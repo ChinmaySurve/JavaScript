@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Operations 42140 Yash Kulkarni</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: #ffbd44;
+    margin-bottom: 20px;
+  }
+
+  .operation {
+    margin-bottom: 30px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #b5b5b5;
+    font-weight: bold;
+  }
+
+  input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    /* background-color: #fffffe; */
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    border-color: black;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #ffffff;
+    outline: none;
+  }
+
+  p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 15px;
+  }
+
+  span {
+    color: #663399;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>String Operations</h1>
+
+  <div class="operation">
+    <label for="reverse">Enter the string:</label>
+    <input type="text" id="input1" placeholder="Enter a string">
+    <button onclick="reverseString()">Reverse String</button>
+    <p>Reversed string: <span id="display1"></span></p>
+  </div>
+
+  <div class="operation">
+    <label for="palindrome">Enter the string:</label>
+    <input type="text" id="input2" placeholder="Enter a string">
+    <button onclick="isPalindrome()">Check Palindrome</button>
+    <p>Result: <span id="display2"></span></p>
+  </div>
+
+  <div class="operation">
+    <label for="replace">Enter the string:</label>
+    <input type="text" id="input3" placeholder="Enter a string">
+    <label for="replaceWhat">Enter the string to replace:</label>
+    <input type="text" id="input4" placeholder="Replace what">
+    <label for="replaceWith">Enter the replacement string:</label>
+    <input type="text" id="input5" placeholder="Replace with">
+    <button onclick="replace()">Replace</button>
+    <p>Result: <span id="display3"></span></p>
+  </div>
+</div>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
