@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+</head>
+<body>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="modifyString()">Modify String</button>
+
+    <div id="result"></div>
+
+    <script>
+        function modifyString() {
+            const inputString = document.getElementById('inputString').value;
+
+            // a] Change case of the string
+            const upperCaseString = inputString.toUpperCase();
+            const lowerCaseString = inputString.toLowerCase();
+
+            // b] Pad characters at the start of the string
+            const paddedString = inputString.padStart(10, '*');
+
+            // c] Split the string
+            const splitString = inputString.split('');
+
+            const modifiedString = {
+                upperCaseString,
+                lowerCaseString,
+                paddedString,
+                splitString,
+            };
+
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = `
+                <p>Uppercase: ${modifiedString.upperCaseString}</p>
+                <p>Lowercase: ${modifiedString.lowerCaseString}</p>
+                <p>Padded: ${modifiedString.paddedString}</p>
+                <p>Split: ${modifiedString.splitString}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
