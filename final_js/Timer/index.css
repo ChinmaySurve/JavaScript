@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+    
+    .question {
+    font-size: 2rem;
+    text-align: center;
+    margin: 20px;
+}
+
+.manual {
+border: 2px solid;
+border-radius: 100px;
+border-color: black;
+margin: 10px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.date {
+width: 100%;
+text-align: center;
+font-size: 30px;
+}
+
+.enter_data{
+display: flex;
+justify-content: center;
+padding: 20px;
+margin: 20px;
+}
+
+.input_data {
+font-size: 20px;
+margin: 20px;
+}
+
+.start_button{
+border: 3px solid green;
+font-size: 30px;
+text-align: center;
+width: 30%;
+}
+
+.timer_value{
+text-align: center;
+width: 100%;
+font-size: 30px;
+margin: 20px;
+}
