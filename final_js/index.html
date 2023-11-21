@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 5 : Countdown timer</title>
+    <link href="index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="question">
+        To create a downdown timer
+    </div>
+
+    <div class="manual">
+        <div class="date">
+            Enter your own date
+        </div>
+        <form>
+        <div class="enter_data">
+            <label class="input_data"> Enter the date </label>
+            <input type="number" class="input_data" id="date" required>
+
+            <label class="input_data"> Enter the month </label>
+            <input type="text" class="input_data" id="month" required>
+
+            <label class="input_data"> Enter the year </label>
+            <input type="number" class="input_data" id="year" required>
+        </div>
+        <div class="enter_data">
+            <label class="input_data"> Enter the Hour </label>
+            <input type="number" class="input_data" id="hour">
+
+            <label class="input_data"> Enter the minute </label>
+            <input type="text" class="input_data" id="minute">
+
+            <label class="input_data"> Enter the second </label>
+            <input type="number" class="input_data" id="second">
+        </div>
+
+        <button class="start_button" onclick="startTimer()">
+            Start Timer
+        </button>
+    </form>
+
+        <div class="timer_value">
+            Timer Value : <h2 id="timer_value"></h2>
+        </div>
+    </div>
+
+
+    <div class="manual">
+        <div class="date">
+            Reverse Timer
+        </div>
+        <div class="enter_data">
+            <label class="input_data"> Enter the date </label>
+            <input type="number" class="input_data" id="date2" required>
+
+            <label class="input_data"> Enter the month </label>
+            <input type="text" class="input_data" id="month2" required>
+
+            <label class="input_data"> Enter the year </label>
+            <input type="number" class="input_data" id="year2" required>
+        </div>
+        <div class="enter_data">
+            <label class="input_data"> Enter the Hour </label>
+            <input type="number" class="input_data" id="hour2">
+
+            <label class="input_data"> Enter the minute </label>
+            <input type="text" class="input_data" id="minute2">
+
+            <label class="input_data"> Enter the second </label>
+            <input type="number" class="input_data" id="second2">
+        </div>
+
+        <div class="start_button" onclick="startReverseTimer()">
+            Start Timer
+        </div>
+
+        <div class="timer_value">
+            Timer Value : <h2 id="timer_value2"></h2>
+        </div>
+    </div>
+
+    <script src="countdown.js"></script>
+</body>
+
+</html>
